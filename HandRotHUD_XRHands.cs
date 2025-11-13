@@ -29,12 +29,12 @@ public class HandRotHUD_XRHands : MonoBehaviour
         {
             if (!hand.isTracked) return $"{label}: not tracked\n";
 
-            // ¼Õ¸ñ Æ÷Áî
+            // ì†ëª© í¬ì¦ˆ
             var wrist = hand.GetJoint(XRHandJointID.Wrist);
             Pose wp;
             if (!wrist.TryGetPose(out wp)) return $"{label}: wrist pose N/A\n";
 
-            // ¼Õ¹Ù´Ú Æ÷Áîµµ °¡´É
+            // ì†ë°”ë‹¥ë„ ê°€ëŠ¥
             var palm = hand.GetJoint(XRHandJointID.Palm);
             Pose pp;
             palm.TryGetPose(out pp);
@@ -48,3 +48,4 @@ public class HandRotHUD_XRHands : MonoBehaviour
                     Line(hands.rightHand, "Right");
     }
 }
+
